@@ -37,26 +37,66 @@
 </head>
 <body>
     <div id="container">
-        <h1>Enock Careers</h1>
+        {% include "nav.html" %}
+        <!-- <h1>Enock Careers</h1> -->
         <img id="banner" src="../static/banner.jpg">
-        <h2>About Enock Careers</h2>
-        <p>
-            Welcome to Enock Careers. We are dedicated to helping you find the best job opportunities in the tech industry. 
-            Our mission is to guide you through every step of your career journey — from writing the perfect resume to preparing 
-            for interviews with top companies. Explore our resources, discover career tips, and connect with employers who value 
-            your skills and potential. Whether you are a fresh graduate or an experienced professional, Enock Careers is here to 
-            help you achieve your career goals and build a brighter future.
-        </p>
+        <h2>Enock Careers</h2>
+
+
+
+
+        <div class="row" style="display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-top: 20px;">
+            <!-- Text -->
+            <p style="flex: 1; font-size: 14px; line-height: 1.6; font-family: Arial, sans-serif; color: rgb(60, 60, 60); text-align: justify; margin: 0;">
+             Welcome to Enock Careers. We are dedicated to helping you find the best job opportunities in the tech industry. 
+                Our mission is to guide you through every step of your career journey — from writing the perfect resume to preparing 
+                for interviews with top companies. Explore our resources, discover career tips, and connect with employers who value 
+                your skills and potential. Whether you are a fresh graduate or an experienced professional, Enock Careers is here to 
+                help you achieve your career goals and build a brighter future.
+            </p>
+
+            <!-- Image container -->
+            <div style="flex: 1; max-width: 40%; position: relative; border-radius: 8px; overflow: hidden;">
+                <img src="../static/banner2.jpg" 
+                     style="width: 100%; height: 220px; object-fit: cover; display: block; border-radius: 8px;">
+
+                <!-- Hover overlay -->
+                <div style="position: absolute; bottom: -100%; left: 0; width: 100%; height: 100%;
+                            background: linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0.1));
+                            transition: bottom 0.5s ease; display: flex; align-items: center; justify-content: center;">
+                    <a href="#" 
+                       style="opacity: 0; transition: opacity 0.5s ease; color: white; font-size: 24px; background: rgba(0,0,0,0.6); 
+                              padding: 10px; border-radius: 50%; text-decoration: none; display: flex; align-items: center; justify-content: center;">
+                        🔗
+                    </a>
+                </div>
+            </div>
+        </div>
+   
         <h2>Open Positions</h2>
         <div>
             {% for job in jobs %}
                 {% include "jobitem.html" %}
             {% endfor %}
         </div>
-        <div style="text-align: center">
-            <button>Contact Us</button>
-        </div>
-        <p>Copyright2025, Enock</p>
+        {% include "footer.html" %}
     </div>
 </body>
+<script>
+    const imgContainers = document.querySelectorAll(".row > div");
+    imgContainers.forEach(container => {
+        const overlay = container.querySelector("div");
+        const link = container.querySelector("a");
+
+        container.addEventListener("mouseenter", () => {
+            overlay.style.bottom = "0";
+            link.style.opacity = "1";
+        });
+
+        container.addEventListener("mouseleave", () => {
+            overlay.style.bottom = "-100%";
+            link.style.opacity = "0";
+        });
+    });
+</script>
 </html>~
