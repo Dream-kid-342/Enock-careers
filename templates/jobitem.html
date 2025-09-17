@@ -1,0 +1,18 @@
+<div style="width: 100%; background-color: #fff; border: 1px solid #ddd; border-radius: 10px; padding: 16px; margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+    <div class="details" style="max-width: 70%;">
+        <h4 style="color: #333; margin: 0 0 6px 0; font-size: 18px;">{{job['title']}}</h4>
+        <div style="color: #555; margin-bottom: 4px;"><b>Location:</b> {{job['location']}}</div>
+        {% if 'salary' in job %}
+        <div style="color: #555;"><b>Salary:</b> {{job['salary']}}</div>
+        {% endif %}
+    </div>
+    <div class="submit">
+        <button 
+            style="padding: 10px 20px; background-color: white; color: rgb(50, 150, 250); border: 1px solid rgb(50, 150, 250); border-radius: 6px; font-weight: bold; cursor: pointer; transition: all 0.3s ease;"
+            onmouseover="this.style.backgroundColor='rgb(50,150,250)'; this.style.color='white';"
+            onmouseout="this.style.backgroundColor='white'; this.style.color='rgb(50,150,250)';"
+        >
+            Apply
+        </button>
+    </div>
+</div>

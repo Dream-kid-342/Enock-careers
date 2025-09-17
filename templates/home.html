@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enock Careers</title>
+    <style>
+        h1{
+            font-size: 40px;
+            font-family: Roboto;
+            font-weight: normal;
+            color: rgb(50, 50, 50);
+            text-align: center;
+        }
+        #banner{
+            width: 100%;
+            height: 360px;
+            object-fit: cover;
+        }
+        h2{
+            font-family: Roboto;
+            font-size: 32px;
+            color: rgb(100, 100, 100);
+            text-align: center;
+            font-weight: normal;
+        }
+        p{
+            color: rgb(80, 80, 80);
+            font-family: Roboto;
+            text-align: center;
+        }
+        #container{
+            max-width: 720px;
+            margin: 0 auto 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Enock Careers</h1>
+        <img id="banner" src="../static/banner.jpg">
+        <h2>About Enock Careers</h2>
+        <p>
+            Welcome to Enock Careers. We are dedicated to helping you find the best job opportunities in the tech industry. 
+            Our mission is to guide you through every step of your career journey — from writing the perfect resume to preparing 
+            for interviews with top companies. Explore our resources, discover career tips, and connect with employers who value 
+            your skills and potential. Whether you are a fresh graduate or an experienced professional, Enock Careers is here to 
+            help you achieve your career goals and build a brighter future.
+        </p>
+        <h2>Open Positions</h2>
+        <div>
+            {% for job in jobs %}
+                {% include "jobitem.html" %}
+            {% endfor %}
+        </div>
+        <div style="text-align: center">
+            <button>Contact Us</button>
+        </div>
+        <p>Copyright2025, Enock</p>
+    </div>
+</body>
+</html>~
